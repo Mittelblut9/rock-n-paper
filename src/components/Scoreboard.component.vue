@@ -23,9 +23,30 @@ export default {
     }
   },
   methods: {
-    updatePlayerScore(player_score) {
-      this.player_score = player_score
+    getScore() {
+      return this.player_score
     },
+    updatePlayerScore(type) { 
+      const score = this.getScore();
+      const newScore = (type === 'You win') ? score + 1 : (type === 'You lose') ? score - 1 : score;
+      this.player_score = (newScore < 0) ? 0 : newScore;
+    },
+    savePlayerScore() {
+      localStorage.setItem('player_score', this.player_score);
+    }
+  },
+  watch: {
+    player_score() {
+      this.savePlayerScore();
+    }
+  },
+  mounted() {
+
+    this.player_score = localStorage.getItem('player_score') || 0;
+
+    this.emitter.on("updatePlayerScore", status => {
+      this.updatePlayerScore(status);
+    });
   }
 }
 </script>

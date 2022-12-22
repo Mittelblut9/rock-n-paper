@@ -38,8 +38,8 @@
     cursor: pointer;
 }
 
-#rock {
-    border: 20px solid hsl(39, 89%, 49%);
+.rock {
+    border: 20px solid hsl(349, 71%, 52%);
 }
 
 #rock::after {
@@ -47,12 +47,12 @@
     width: 200px;
     height: 10px;
     position: absolute;
-    background: black;
+    background: rgb(0, 0, 0);
     transform: translateX(65%);
     z-index: -1;
 }
 
-#paper {
+.paper {
     border: 20px solid hsl(230, 89%, 62%);
 }
 
@@ -61,13 +61,13 @@
     width: 200px;
     height: 10px;
     position: absolute;
-    background: black;
+    background: rgb(0, 0, 0);
     transform: translate(-20%, 1000%) rotate(-60deg);
     z-index: -1;
 }
 
-#scissors {
-    border: 20px solid hsl(349, 71%, 52%);
+.scissors {
+    border: 20px solid hsl(39, 89%, 49%);
 }
 
 #scissors::after {
@@ -75,7 +75,41 @@
     width: 200px;
     height: 10px;
     position: absolute;
-    background: black;
+    background: rgb(0, 0, 0);
     transform: translate(-34%, -1000%) rotate(60deg);
     z-index: -1;
+}
+
+.result {
+    color: rgb(255, 255, 255)
+}
+
+.result_options {
+    display:grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: space-between;
+    grid-gap: 60px 90px;
+    margin: 20px;
+}
+
+.result_status {
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    display: grid;
+    justify-content: space-between;
+}
+
+.result_status button {
+    background: rgb(255, 255, 255);
+    border: none;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: rgba(53, 53, 53, 0.863);
+    border-radius: 6px;
 }
