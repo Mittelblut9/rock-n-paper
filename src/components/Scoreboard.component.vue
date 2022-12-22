@@ -27,7 +27,7 @@ export default {
       return this.player_score
     },
     updatePlayerScore(type) { 
-      const score = this.getScore();
+      const score = parseInt(this.getScore());
       const newScore = (type === 'You win') ? score + 1 : (type === 'You lose') ? score - 1 : score;
       this.player_score = (newScore < 0) ? 0 : newScore;
     },

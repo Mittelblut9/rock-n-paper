@@ -1,10 +1,13 @@
 {
   "name": "rock_n_paper",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "http://Mittelblut9.github.io/rock-n-paper",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -15,7 +18,8 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "gh-pages": "^4.0.0"
   },
   "browserslist": [
     "> 1%",
